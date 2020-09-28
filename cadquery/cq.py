@@ -3099,6 +3099,11 @@ class Workplane(object):
             extrude along a profile (sweep)
         """
 
+        # JF: sanity preservation
+        if not len(self.ctx.pendingWires):
+            self.wires().toPending()
+            print("FTFY")
+
         # group wires together into faces based on which ones are inside the others
         # result is a list of lists
 
