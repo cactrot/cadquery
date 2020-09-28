@@ -369,8 +369,9 @@ class DirectionNthSelector(ParallelDirSelector):
         self.N = n
 
     def filter(self, objectList):
+        # WHY?!1...
         # select first the objects that are normal/parallel to a given dir
-        objectList = super(DirectionNthSelector, self).filter(objectList)
+        #objectList = super(DirectionNthSelector, self).filter(objectList)
 
         def distance(tShape):
             return tShape.Center().dot(self.direction)
